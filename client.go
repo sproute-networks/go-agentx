@@ -163,7 +163,6 @@ func (c *Client) runReceiver() chan *pdu.HeaderPacket {
 			if err := packet.UnmarshalBinary(packetBytes); err != nil {
 				panic(err)
 			}
-
 			rx <- &pdu.HeaderPacket{Header: header, Packet: packet}
 		}
 	}()
